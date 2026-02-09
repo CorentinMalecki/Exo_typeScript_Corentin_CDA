@@ -1,4 +1,4 @@
-function formatId(id: number | string) {
+function formatId(id: number | string): string {
     return "#" + id.toString();
 }
 formatId(10);
@@ -6,7 +6,9 @@ formatId("admin-55");
 formatId("user-0001");
 formatId(999);
 
-function setStatus(status: "success" | "error" | "pending" | "cancelled") {
+type Status = "success" | "error" | "pending" | "cancelled";
+
+function setStatus(status : Status): void {
     console.log("Status:", status);
 }
 setStatus("success");
@@ -25,7 +27,8 @@ function getColor(): [number, number, number, number] {
     return [255, 100, 50, 0.5];
 }
 
-function setRole(role: "ADMIN" | "EDITOR" | "VIEWER" | "GUEST") {
+type role = "ADMIN" | "EDITOR" | "VIEWER" | "GUEST";
+function setRole(role: role) {
     console.log("Role:", role);
 }
 setRole("ADMIN");

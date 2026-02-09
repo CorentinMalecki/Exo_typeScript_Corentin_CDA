@@ -3,7 +3,7 @@ let message:string = "Hello";
 let darkMode:boolean = false;
 let username:string = "Alice";
 let taxRate:number = 0.2;
-let data:null = null;
+let data:null| number = null;
 let amount:number;
 
 const user:{
@@ -54,6 +54,13 @@ function loadConfig(flag: boolean): object | null {
     return null;
 }
 
+loadConfig(true);
+let welcome = greetUser("john");
+console.log(welcome);
+
 function multiplyAll(list:number[], factor:number): number[] {
     return list.map(v => v * factor);
 }
+
+let result = multiplyAll([7,8,9,4], 5);
+console.log(result)
